@@ -87,7 +87,6 @@ header h1 span {
   .menu {
     position: relative;
     z-index: 1;
-    padding: 15px 0;
     box-shadow: none;
   }
   
@@ -97,9 +96,21 @@ header h1 span {
     
 }
 
+@media only screen and (min-width: 1024px) {
+  header h1 span {
+    display: inline-block;
+  }
+
+  header h1 span:last-of-type:before {
+    content: " - ";
+    display: inline-block;
+    margin: 0 5px;
+  }
+}
+
 .main-image {
   margin-bottom: -4px;
-  height: 50px;
+  height: 5vh;
   width: 100%;
   object-fit: cover;
   object-position: top;
@@ -107,13 +118,13 @@ header h1 span {
 
 @media only screen and (min-width: 600px) {
   .main-image {
-    height: 90px;
+    height: 20vh;
   }
 }
 
 @media only screen and (min-width: 840px) {
     .main-image {
-      height: 255px;
+      height: 40vh;
     }
   }
 
@@ -164,7 +175,7 @@ header h1 span {
 }
 
 #my-skills li {
-  flex: 43%;
+  width: 43%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -175,15 +186,27 @@ header h1 span {
   border: 1px solid #f1f1f1;
 }
 
-#my-skills i {
+#my-skills li i {
   margin-bottom: 0.5rem;
   font-size: 2.2rem;
   color: #3a7cd9;
 }
 
+#my-skills a {
+  font-size: 0.9rem;
+  display: block;
+  text-align: right;
+}
+
 @media only screen and (min-width: 840px) {
   #my-skills li {
-    flex: 30%;
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  #my-skills li {
+    width: 14%;
   }
 }
 
@@ -234,18 +257,18 @@ header h1 span {
   #portfolio ul {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   
   #portfolio li {
-    flex: 49%;
-  }
-  
-  #portfolio li:nth-child(2n+1) {
-    margin-right: 5px;
+    width: 49.5%;
   }
 
-  #portfolio li:nth-child(2n) {
-    margin-left: 5px;
+}
+
+@media only screen and (min-width: 1366px) {
+  #portfolio li {
+    width: 24.5%;
   }
 }
 
