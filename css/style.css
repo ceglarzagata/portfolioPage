@@ -29,6 +29,12 @@ a {
   text-decoration: none;
 }
 
+@media only screen and (min-width: 840px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
 .container {
   max-width: 1960px;
   padding: 20px;
@@ -60,7 +66,6 @@ header h1 span {
 
 .menu li {
   display: flex;
-  text-align: center;
 }
 
 .menu a {
@@ -75,7 +80,7 @@ header h1 span {
     align-items: center;
   }
 
-  header .container h1 {
+  header h1 span {
     text-align: left;
   }
 
@@ -85,10 +90,6 @@ header h1 span {
     padding: 15px 0;
     box-shadow: none;
   }
-
-  .menu li {
-    text-align: center;
-  }
   
   .menu li:last-of-type a {
     padding-right: 0;
@@ -96,9 +97,25 @@ header h1 span {
     
 }
 
-main img {
-    margin-bottom: -4px;
+.main-image {
+  margin-bottom: -4px;
+  height: 50px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
 }
+
+@media only screen and (min-width: 600px) {
+  .main-image {
+    height: 90px;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+    .main-image {
+      height: 255px;
+    }
+  }
 
 #about-me {
   padding-bottom: 100px;
@@ -164,6 +181,12 @@ main img {
   color: #3a7cd9;
 }
 
+@media only screen and (min-width: 840px) {
+  #my-skills li {
+    flex: 30%;
+  }
+}
+
 #portfolio ul {
   display: flex;
   flex-direction: column;
@@ -195,6 +218,7 @@ main img {
   background: linear-gradient(to right, rgba(0,232,186,.7) 0%, rgba(32,152,217,.7) 54%, rgba(144,31,219,.7) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e8ba', endColorstr='#901fdb', GradientType=1 );
   color: #fff;
+  text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -204,6 +228,25 @@ main img {
   font-size: 0.9rem;
   display: block;
   text-align: right;
+}
+
+@media only screen and (min-width: 840px) {
+  #portfolio ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  #portfolio li {
+    flex: 49%;
+  }
+  
+  #portfolio li:nth-child(2n+1) {
+    margin-right: 5px;
+  }
+
+  #portfolio li:nth-child(2n) {
+    margin-left: 5px;
+  }
 }
 
 footer {
@@ -255,4 +298,10 @@ footer {
 .footer-box i {
   font-size: 1.5rem;
   color: #fff;
+}
+
+@media only screen and (min-width: 840px) {
+  footer {
+    padding-bottom: 0;
+  }
 }
