@@ -8,4 +8,7 @@ Technology used:
 <li>CSS</li>
 </ul>
 
-You can see it here: https://ceglarzagata.github.io/portfolioPage/
+Images from: https://pixabay.com/<br>
+Icons from: https://materialdesignicons.com/
+
+See: https://ceglarzagata.github.io/portfolioPage/
