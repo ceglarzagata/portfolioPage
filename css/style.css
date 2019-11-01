@@ -36,10 +36,20 @@ a {
 }
 
 .container {
-  max-width: 1960px;
-  padding: 20px;
+  max-width: 1360px;
+  padding: 30px 20px;
+  margin: 0 auto;
 }
 
+@media only screen and (min-width: 1360px) {
+  .container {
+    padding: 30px 0;
+  }
+}
+
+header .container {
+  padding: 20px;
+}
 header h1 span {
   display: block;
   font-size: 1.3rem;
@@ -108,6 +118,12 @@ header h1 span {
   }
 }
 
+@media only screen and (min-width: 1360px) {
+  header .container {
+    padding: 20px 0;
+  }
+}
+
 .main-image {
   margin-bottom: -4px;
   height: 5vh;
@@ -159,7 +175,7 @@ header h1 span {
 }
 
 #my-skills {
-  margin: -100px 20px 20px;
+  margin: -100px 20px 0;
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.55);
   -moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.55);
@@ -171,7 +187,7 @@ header h1 span {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 #my-skills li {
@@ -192,9 +208,14 @@ header h1 span {
   color: #3a7cd9;
 }
 
+#my-skills h3 {
+  margin-bottom: 0;
+}
+
 #my-skills a {
-  font-size: 0.9rem;
   display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
   text-align: right;
 }
 
@@ -202,17 +223,28 @@ header h1 span {
   #my-skills li {
     width: 30%;
   }
+
+  #my-skills a {
+    margin-right: 25px;
+  }
 }
 
-@media only screen and (min-width: 840px) {
+@media only screen and (min-width: 1024px) {
   #my-skills li {
     width: 14%;
+  }
+}
+
+@media only screen and (min-width: 1360px) {
+  #my-skills {
+    margin: -100px auto 0;
   }
 }
 
 #portfolio ul {
   display: flex;
   flex-direction: column;
+  padding: 10px 0;
 }
 
 #portfolio li {
@@ -247,9 +279,10 @@ header h1 span {
   text-overflow: ellipsis;
 }
 
-#portfolio a {
-  font-size: 0.9rem;
+#portfolio .anchor {
   display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
   text-align: right;
 }
 
@@ -264,11 +297,16 @@ header h1 span {
     width: 49.5%;
   }
 
+  #portfolio .anchor {
+    margin-right: 25px;
+  }
+
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 1360px) {
   #portfolio li {
     width: 24.5%;
+    margin-bottom: 0;
   }
 }
 
@@ -278,7 +316,7 @@ footer {
 }
 
 .contact-box {
-  margin: 20px 20px -50px;
+  margin: 0 auto -50px;
   z-index: 0;
   position: relative;
   background-color: #fff;
@@ -308,7 +346,7 @@ footer {
 }
 
 .footer-box div {
-  margin: 20px 10px 0px;
+  margin: 20px 10px;
   height: 2.4rem;
   width: 2.4rem;
   display: flex;
