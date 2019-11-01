@@ -99,6 +99,27 @@ header h1 span {
     z-index: 1;
     box-shadow: none;
   }
+
+  .menu a::after {
+    content: "";
+    margin-top: 5px;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: rgba(0,232,186,1);
+    background: -moz-linear-gradient(left, rgba(0,232,186,1) 0%, rgba(32,152,217,1) 54%, rgba(144,31,219,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,232,186,1)), color-stop(54%, rgba(32,152,217,1)), color-stop(100%, rgba(144,31,219,1)));
+    background: -webkit-linear-gradient(left, rgba(0,232,186,1) 0%, rgba(32,152,217,1) 54%, rgba(144,31,219,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,232,186,1) 0%, rgba(32,152,217,1) 54%, rgba(144,31,219,1) 100%);
+    background: -ms-linear-gradient(left, rgba(0,232,186,1) 0%, rgba(32,152,217,1) 54%, rgba(144,31,219,1) 100%);
+    background: linear-gradient(to right, rgba(0,232,186,1) 0%, rgba(32,152,217,1) 54%, rgba(144,31,219,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e8ba', endColorstr='#901fdb', GradientType=1 );
+    transition: all 1s;
+  }
+
+  .menu a:hover::after {
+    width: 100%;
+  }
   
   .menu li:last-of-type a {
     padding-right: 0;
@@ -271,6 +292,7 @@ header h1 span {
   bottom: 0;
   left: 0;
   padding: 10px;
+  height: 40px;
   width: 100%;
   background: rgba(0,232,186,.7);
   background: -moz-linear-gradient(left, rgba(0,232,186,.7) 0%, rgba(32,152,217,.7) 54%, rgba(144,31,219,.7) 100%);
@@ -280,11 +302,25 @@ header h1 span {
   background: -ms-linear-gradient(left, rgba(0,232,186,.7) 0%, rgba(32,152,217,.7) 54%, rgba(144,31,219,.7) 100%);
   background: linear-gradient(to right, rgba(0,232,186,.7) 0%, rgba(32,152,217,.7) 54%, rgba(144,31,219,.7) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e8ba', endColorstr='#901fdb', GradientType=1 );
+}
+
+#portfolio h3 {
   color: #fff;
   text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+#portfolio h3::after {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  height: 1px;
+  width: 0;
+  background-color: #fff;
+  transition: width 2s;
+}
+
+#portfolio p {
+  display: none;
 }
 
 #portfolio .anchor {
@@ -309,6 +345,30 @@ header h1 span {
     width: 49.5%;
   }
 
+  .portfolio-text-box {
+    transition: height 1s;
+  }
+
+  #portfolio li:hover .portfolio-text-box {
+    height: 100%;
+  }
+
+  #portfolio li:hover h3::after {
+    width: 150px;
+  }
+
+
+  #portfolio li:hover p {
+    display: block;
+    margin-top: 20px;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; 
+  }
+
   #portfolio .anchor {
     margin-right: 25px;
   }
@@ -328,7 +388,8 @@ footer {
 }
 
 .contact-box {
-  margin: 0 20px -50px;
+  margin: 20px 20px -50px;
+  padding-top: 60px;
   z-index: 0;
   position: relative;
   background-color: #fff;
@@ -336,6 +397,57 @@ footer {
   -moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.55);
   box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.55);
   border-radius: 5px;
+}
+
+.puls {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background-color: #3a7cd9;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  animation: puls 1.5s infinite alternate-reverse;
+}
+
+@keyframes puls {
+  0% {
+    box-shadow: 0 0 0 rgb(30, 73, 133);
+  }
+  100% {
+    box-shadow: 0 0 25px rgb(30, 73, 133)
+  }
+}
+
+.puls::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  z-index: -1;
+  top: -20px;
+  left: -20px;
+  background-color: #3a7cd9;
+  opacity: 0.25;
+  border-radius: 50%;
+}
+
+.puls::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  border: 1px solid #f1f1f1;
+  border-radius: 50%;
 }
 
 .footer-box {
@@ -358,6 +470,7 @@ footer {
 }
 
 .footer-box div {
+  background-color: transparent;
   margin: 20px 10px;
   height: 2.4rem;
   width: 2.4rem;
@@ -366,15 +479,19 @@ footer {
   align-items: center;
   border: 1px solid #fff;
   border-radius: 50%;
+  transform: rotate(0deg);
+  transition: background-color 1s, transform 1.5s;
 }
 
 .footer-box div:hover {
   background-color: #fff;
+  transform: rotate(360deg);
 }
 
 .footer-box i {
   font-size: 1.5rem;
   color: #fff;
+  transition: color 1s;
 }
 
 .footer-box div:hover i {
