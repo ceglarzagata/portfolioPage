@@ -174,6 +174,10 @@ header h1 span {
   color: #fff;
 }
 
+#about-me a:hover {
+  color: #f1f1f1;
+}
+
 #my-skills {
   margin: -100px 20px 0;
   background-color: #fff;
@@ -217,6 +221,10 @@ header h1 span {
   margin-top: 10px;
   font-size: 0.9rem;
   text-align: right;
+}
+
+#my-skills a:hover {
+  color: #3a7cd9;
 }
 
 @media only screen and (min-width: 840px) {
@@ -286,6 +294,10 @@ header h1 span {
   text-align: right;
 }
 
+#portfolio .anchor:hover {
+  color: #3a7cd9;
+}
+
 @media only screen and (min-width: 840px) {
   #portfolio ul {
     flex-direction: row;
@@ -316,7 +328,7 @@ footer {
 }
 
 .contact-box {
-  margin: 0 auto -50px;
+  margin: 0 20px -50px;
   z-index: 0;
   position: relative;
   background-color: #fff;
@@ -356,13 +368,27 @@ footer {
   border-radius: 50%;
 }
 
+.footer-box div:hover {
+  background-color: #fff;
+}
+
 .footer-box i {
   font-size: 1.5rem;
   color: #fff;
 }
 
+.footer-box div:hover i {
+  color: #3a7cd9;
+}
+
 @media only screen and (min-width: 840px) {
   footer {
     padding-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1360px) {
+  .contact-box {
+    margin: 0 auto -50px;
   }
 }
